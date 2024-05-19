@@ -1,4 +1,5 @@
 import LoginPage from '../support/pageObjects/LoginPage'//create POM model for login page
+//hi
 
 describe('Authentication validation', () => {
   it('should Login with valid user', () => {
