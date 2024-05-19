@@ -5,6 +5,7 @@ describe('Authentication validation', () => {
   const loginPage = new LoginPage();
 
   beforeEach(() => {
+    //base url
     loginPage.visit();
 });
   it('should Login with valid user', () => {
