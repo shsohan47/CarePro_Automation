@@ -5,9 +5,10 @@ export default class LoginPage {
         password: '.relative > .custom-input',
         rememberMe: '#rememberMe',
         errorMessageModal:'.alert',
-        errorMessage: '.text-\[10px\]',
+        errorMessage: '.alert',
         forgetPassword: '.heading_5',
-        signInButton:'.button'
+        signInButton:'.button',
+        fieldErroMessage:'.input_error'
 
     };
 
@@ -38,8 +39,13 @@ export default class LoginPage {
     {
         return cy.get(this.selectors.errorMessage).should('contain.text',message)
     }
+
+    FieldErrorModal(msg)
+    {
+        return cy.get(this.selectors.fieldErroMessage).should("contain.text",msg)
+    }
     clickRememberButton()
     {
-        return cy.get(this.selectors.rememberMe).click
+        return cy.get(this.selectors.rememberMe).click();
     }
 }
