@@ -6,7 +6,7 @@ describe("client-search functionality ",()=>
     const loginPage = new LoginPage()
     const facility = new facilityPage()
     const clientServices = new clientService()
-    before(()=>
+    beforeEach(()=>
 {
     loginPage.login();
     facility.facilityFunction();
