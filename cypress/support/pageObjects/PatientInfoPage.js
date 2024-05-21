@@ -1,4 +1,5 @@
 export default class PatientInfo{
+    //all selectors
         selectors={
             date:":nth-child(1) > .flex-col > .custom-input'",
             time:":nth-child(2) > .flex-col > .custom-input'",
