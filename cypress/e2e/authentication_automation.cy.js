@@ -9,7 +9,7 @@ describe('Authentication validation', () => {
     loginPage.visit();
 });
   it('should Login with valid user', () => {
-    cy.wait(3000)
+    cy.wait(5000)
     loginPage.fillUserName('tester');
     loginPage.fillPassword('tester2023!');
     loginPage.clickRememberButton();
@@ -17,27 +17,27 @@ describe('Authentication validation', () => {
     loginPage.signIn();
     cy.url().should("be.equal","https://carepro-training.ihmafrica.com/select-facility")
   })
-  it('"check validation", "Login with unauthenticate user" or "invalid credential"',()=>
+  it.only('"check validation", "Login with unauthenticate user" or "invalid credential"',()=>
   {
-    cy.wait(3000);
+    cy.wait(5000);
     //validation check in empty field for username
     loginPage.fillUserName("randomUser");
     loginPage.signIn();
-    loginPage.FieldErrorModal("Required!");
+    loginPage.verifyErrorMessage("Required!");
     //validation check in empty field for username
     loginPage.clearField('.flex-col.undefined > .custom-input');
     loginPage.fillPassword('12345');
     loginPage.signIn();
-    loginPage.FieldErrorModal("Required!");
+    loginPage.verifyErrorMessage("Required!");
     //validation check for invalid credentials
     loginPage.fillUserName("InvalidUser");
     loginPage.signIn();
     loginPage.verifyErrorModal();
-    loginPage.verifyErrorMessage("Invalid username or password!");
+    loginPage.verifyErrorMessageV1("Invalid username or password!");
     
   })
 
-  it.only("Validate Unauthorize user",()=>
+  it("Validate Unauthorize user",()=>
   {
     //direct visit the url that are unauthorize without login
     cy.visit('/select-facility')

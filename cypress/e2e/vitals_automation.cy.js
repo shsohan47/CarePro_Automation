@@ -26,7 +26,7 @@ it("go to vital functionality",()=>
     clientServices.vitalButtonClick();
 })
 
-it("User data manupulation",()=>
+it("User data manupulation ",()=>
 {
     clientServices.nrcClick();
     clientServices.NRCvalueInput("111111111");
@@ -39,6 +39,7 @@ it("User data manupulation",()=>
     clientServices.vitalButtonClick();
     cy.wait(5000)
     clientServices.addVital();
+
 
 })
 })
