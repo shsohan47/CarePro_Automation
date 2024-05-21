@@ -17,7 +17,7 @@ describe('Authentication validation', () => {
     loginPage.signIn();
     cy.url().should("be.equal","https://carepro-training.ihmafrica.com/select-facility")
   })
-  it.only('"check validation", "Login with unauthenticate user" or "invalid credential"',()=>
+  it('"check validation", "Login with unauthenticate user" or "invalid credential"',()=>
   {
     cy.wait(5000);
     //validation check in empty field for username
