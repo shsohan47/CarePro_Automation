@@ -5,7 +5,7 @@ export default class LoginPage {
         password: '.relative > .custom-input',
         rememberMe: '#rememberMe',
         errorMessageModal:'.alert',
-        errorMessage: '.text-\[10px\]',
+        errorMessage: '.input_error',
         forgetPassword: '.heading_5',
         signInButton:'.button'
 
@@ -19,7 +19,7 @@ export default class LoginPage {
     login()
     {
         cy.visit('/');
-        cy.wait(3000);
+        cy.wait(6000);
         cy.get(this.selectors.username).type("tester");
         cy.get(this.selectors.password).type("tester2023!");
         cy.get(this.selectors.signInButton).click();
@@ -46,8 +46,13 @@ export default class LoginPage {
 
     verifyErrorMessage(message)
     {
-        return cy.get(this.selectors.errorMessage).should('contain.text',message)
+        return cy.get(this.selectors.errorMessage).should('contain.text',message);
     }
+    verifyErrorMessageV1(msg)
+    {
+        cy.get('.alert').should("contain.text",msg);
+    }
+   
     clickRememberButton()
     {
         return cy.get(this.selectors.rememberMe).click()

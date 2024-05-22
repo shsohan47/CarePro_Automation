@@ -5,8 +5,7 @@ export default class facilityPage {
         facility: '.overflow-auto > .custom-input',
         enterButton: '.button',
         sendFacilityRequest: '.text-ashColor',
-        logOut: '.text-center > .text-\[11px\]',
-        errorMessage: '.gap-\[1px\] > .text-red-500'
+        errorMessage: ':nth-child(1) > .input_error'
     }
 
     selectProvince(name)
@@ -27,10 +26,17 @@ export default class facilityPage {
         return cy.get(this.selectors.facility).type(name);
     }
 
-    logout()
+    logout() {
+
+        cy.get(".mt-4").eq(1).within(()=>
     {
-        return cy.get(this.selectors.logOut).click({force:true});
+        cy.contains("Logout").scrollIntoView()
+          .should('be.visible') // Ensure the element is visible
+          .click({ force: true }); // Force click if necessary
+    })
+          
     }
+    
 
     clickButton()
     {
@@ -38,11 +44,15 @@ export default class facilityPage {
     }
     errorValidation(text)
     {
-        return cy.get(this.selectors.errorMessage).should("contain.text",text);
+        return cy.get('.gap-3').within(()=>
+    {
+        cy.get(this.selectors.errorMessage).scrollIntoView().should("contain.text",text);
+    })
     }
     facilityFunction()
     {
-        this.selectProvince("Lusaka");
+        cy.wait(4000)
+    this.selectProvince("Lusaka");
     this.selectDistrict("Lusaka");
     this.selectFacility("Dr. Watson Dental Clinic",{delay:100});
     cy.wait(2000)
