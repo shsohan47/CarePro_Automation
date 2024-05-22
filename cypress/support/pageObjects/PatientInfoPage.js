@@ -8,7 +8,7 @@ export default class PatientInfo{
             temp:':nth-child(5) > .flex-col > .custom-input',
             systolic:':nth-child(6) > .flex-col > .custom-input',
             diastolic:':nth-child(7) > .flex-col > .custom-input',
-            bp:':nth-child(7) > .flex-col > .custom-input',
+            bp:':nth-child(8) > .flex-col > .custom-input',
             pulseRate:':nth-child(9) > .flex-col > .custom-input',
             respiratoryRate:':nth-child(10) > .flex-col > .custom-input',
             oxygen:':nth-child(11) > .flex-col > .custom-input',
@@ -17,8 +17,10 @@ export default class PatientInfo{
             abdominal:':nth-child(14) > .flex-col > .custom-input',
             headCircum:':nth-child(15) > .flex-col > .custom-input',
             hcScore:':nth-child(16) > .flex-col > .custom-input',
-            note:':nth-child(17) > .flex-col > .custom-input'
-            // errorMessage:
+            note:':nth-child(17) > .flex-col > .custom-input',
+            dateCancel: ':nth-child(1) > .flex-col > .react-datepicker-wrapper > .react-datepicker__input-container > .react-datepicker__close-icon',
+            timeCancel: ':nth-child(2) > .flex-col > .react-datepicker-wrapper > .react-datepicker__input-container > .react-datepicker__close-icon',
+            errorMessage: '.input_error'
       }
       datePick(date)
       {
@@ -35,9 +37,9 @@ export default class PatientInfo{
       {
         return cy.get(this.selectors.height).type(heights);
       }
-      timePick(times)
+      tempPick(temp)
       {
-        return cy.get(this.selectors.time).type(times);
+        return cy.get(this.selectors.temp).type(temp);
       }
       systolicPick(sys)
       {
@@ -90,5 +92,9 @@ export default class PatientInfo{
       fieldClear(selector)
       {
         return cy.get(this.selectors[selector]).clear();
+      }
+      errorAssertion(assert,msg)
+      {
+        return cy.get(this.selectors.errorMessage).should(assert,msg)
       }
     }

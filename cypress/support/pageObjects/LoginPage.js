@@ -19,7 +19,7 @@ export default class LoginPage {
     login()
     {
         cy.visit('/');
-        cy.wait(4000);
+        cy.wait(6000);
         cy.get(this.selectors.username).type("tester");
         cy.get(this.selectors.password).type("tester2023!");
         cy.get(this.selectors.signInButton).click();

@@ -51,7 +51,8 @@ export default class facilityPage {
     }
     facilityFunction()
     {
-        this.selectProvince("Lusaka");
+        cy.wait(4000)
+    this.selectProvince("Lusaka");
     this.selectDistrict("Lusaka");
     this.selectFacility("Dr. Watson Dental Clinic",{delay:100});
     cy.wait(2000)
