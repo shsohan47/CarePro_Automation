@@ -29,7 +29,7 @@ Follow these steps to install Cypress and set up the project:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/shsohan47/CarePro_Automation.git
 cd your-repo-name
 
 2. Install Dependencies
@@ -80,21 +80,25 @@ yarn cypress run
 Project Structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
-go
-Copy code
-your-repo-name/
+
+CarePro_Automation/
 ├── cypress/
 │   ├── fixtures/
-│   ├── integration/
-│   │   ├── examples/
-│   │   └── tests/
-│   ├── plugins/
+│   |--e2e
+|       |--auth_automation.cy.js
+|       |--facility_automation.cy.js
+|       |--vital_automation.cy.js
 │   ├── support/
 │   │   ├── commands.js
 │   │   ├── index.js
 │   │   └── page_objects/
 │   │       ├── loginPage.js
-│   │       └── homePage.js
+│   │       └── ClientSearch.js
+│   │       ├── facilityPage.js
+│   │       └── PatientInfoPage.js
+│   ├── component/
+│   │   ├── clearBMI.js
+│   │   ├── validPatientInfo.js
 ├── node_modules/
 ├── .gitignore
 ├── cypress.json
