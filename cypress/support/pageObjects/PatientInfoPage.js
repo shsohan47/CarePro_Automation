@@ -20,7 +20,9 @@ export default class PatientInfo{
             note:':nth-child(17) > .flex-col > .custom-input',
             dateCancel: ':nth-child(1) > .flex-col > .react-datepicker-wrapper > .react-datepicker__input-container > .react-datepicker__close-icon',
             timeCancel: ':nth-child(2) > .flex-col > .react-datepicker-wrapper > .react-datepicker__input-container > .react-datepicker__close-icon',
-            errorMessage: '.input_error'
+            errorMessage: '.input_error',
+            saveButton: '.main_btn',
+            bmiMessage: ':nth-child(3) > .text-xs'
       }
       datePick(date)
       {
@@ -96,5 +98,13 @@ export default class PatientInfo{
       errorAssertion(assert,msg)
       {
         return cy.get(this.selectors.errorMessage).should(assert,msg)
+      }
+      save()
+      {
+        return cy.get(this.selectors.saveButton).click();
+      }
+      bmiMsg(msg)
+      {
+        return cy.get(this.selectors.bmiMessage).should("contain.text",msg);
       }
     }
