@@ -105,7 +105,7 @@ describe("client-search functionality", () => {
       cy.get('.grid > :nth-child(5)').should("contain.text","Above normal >37°C");
 
     })
-    it("BP validation and Boundary Value testing",()=>
+    it.only("BP validation and Boundary Value testing",()=>
     {
       //visit vital with store session
       cy.visit('/vitals')

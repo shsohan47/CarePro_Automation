@@ -1,17 +1,31 @@
-# CarePro_Automation
-An Automation project for assignment given from Excel Technology ltd
-
-
 # Cypress Automation Project
 
 This repository contains a Cypress automation script using the Page Object Model (POM) structure. The project is designed to execute a large number of test cases efficiently.
 
 ## Table of Contents
 
+- [Project Overview](#project-overviewwhat-i-did)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running Tests](#running-tests)
-- [Project Structure](#project-structure)
+
+
+
+
+## Project Overview(what I did)
+
+This project implements a POM-based structure for better understanding and reusability. Here are the key features of the project:
+
+- **Page Object Model (POM)**: Enhances readability and reusability of code.
+- **Session Management**: Stores sessions to avoid logging in every time, reducing test execution time.
+- **Standardized Code**: Implements functions to adhere to standard coding policies.
+- **Professional Code Structure**: Organized in a professional manner for maintainability.
+- **Test Scripts**: Includes three main test scripts:
+  - **Authentication**: Automates all login and authentication processes.
+  - **Facilities**: Automates every possible test case related to facilities.
+  - **Vitals**: Main part of automation, includes validation, boundary value testing, etc.
+- **Custom Cypress Configuration**: Modifies `cypress.config.js` to set base URL, default command timeout, and run all specs.
+- **Assertions**: Contains numerous assertions for each test case to handle every scenario and verify URL redirects correctly.
 
 
 ## Prerequisites
@@ -76,7 +90,8 @@ Or using yarn:
 bash
 Copy code
 yarn cypress run
-Project Structure
+
+project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
 ##project-structure
@@ -104,7 +119,6 @@ CarePro_Automation/
 ├── package.json
 └── README.md
 fixtures/: Contains test data files.
-integration/: Contains test case files.
-plugins/: Contains plugins and configuration files for Cypress.
 support/: Contains custom commands and the Page Object Model (POM) files.
 page_objects/: Contains page object files that define the page elements and actions.
+
