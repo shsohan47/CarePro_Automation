@@ -11,6 +11,7 @@ This repository contains a Cypress automation script using the Page Object Model
 
 
 
+
 ## Project Overview(what I did)
 
 This project implements a POM-based structure for better understanding and reusability. Here are the key features of the project:
@@ -25,6 +26,7 @@ This project implements a POM-based structure for better understanding and reusa
   - **Vitals**: Main part of automation, includes validation, boundary value testing, etc.
 - **Custom Cypress Configuration**: Modifies `cypress.config.js` to set base URL, default command timeout, and run all specs.
 - **Assertions**: Contains numerous assertions for each test case to handle every scenario and verify URL redirects correctly.
+
 
 ## Prerequisites
 
@@ -92,7 +94,7 @@ yarn cypress run
 project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
-
+##project-structure
 CarePro_Automation/
 ├── cypress/
 │   ├── fixtures/
