@@ -12,8 +12,7 @@ This repository contains a Cypress automation script using the Page Object Model
 - [Installation](#installation)
 - [Running Tests](#running-tests)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Prerequisites
 
@@ -80,7 +79,7 @@ yarn cypress run
 Project Structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
-
+##project-structure
 CarePro_Automation/
 ├── cypress/
 │   ├── fixtures/
