@@ -1,42 +1,46 @@
-import LoginPage from "../support/pageObjects/LoginPage"
-import facilityPage from "../support/pageObjects/FacilityPage";
-describe("facility testCases",()=>
-{
-    const loginPage = new LoginPage();
-    const facility = new facilityPage();
-    beforeEach(()=>
-{
+import LoginPage from "../support/pageObjects/LoginPage";
+import FacilityPage from "../support/pageObjects/FacilityPage";
+
+describe("Facility test cases", () => {
+  const loginPage = new LoginPage();
+  const facility = new FacilityPage();
+
+  beforeEach(() => {
+    // Log in before each test
     loginPage.login();
-}) 
-    it("redirect URL is as expected & invalid facility select test case",()=>
-{
-    
-    cy.url().should("equal","https://carepro-training.ihmafrica.com/select-facility");
-    //check empty field show the error message
+  });
+
+  it("Redirect URL is correct & invalid facility select test", () => {
+    // Check if URL is correct after login
+    cy.url().should("equal", "https://carepro-training.ihmafrica.com/select-facility");
+    // Attempt to submit without selecting a facility and validate error message
     facility.clickButton();
-    facility.errorValidation('Required!');
+    facility.errorValidation("Required!");
+  });
 
-})
-
-it("positive testCase with valid credential ",()=>
-{
+  it("Valid facility selection", () => {
+    // Select province, district, and facility with valid inputs
     facility.selectProvince("Lusaka");
     facility.selectDistrict("Lusaka");
-    facility.selectFacility("Dr. Watson Dental Clinic",{delay:100});
-    cy.wait(2000)
+    facility.selectFacility("Dr. Watson Dental Clinic", { delay: 100 });
+    cy.wait(2000); // Wait for 2 seconds to ensure the selection is processed
     facility.clickFacility();
-    cy.get('.absolute > .border').click();
-    facility.clickButton()
-})
-it("Logout Functionality in facility panel",()=>
-{
-    facility.logout();
-    cy.url().should('equal',"https://carepro-training.ihmafrica.com/");
-})
+    // Confirm selection by clicking additional button
+    cy.get(".absolute > .border").click();
+    facility.clickButton();
+  });
 
-it("send facility request functionality",()=>
-{
-    cy.get(facility.selectors.sendFacilityRequest).click()
-    cy.url().should("equal","https://carepro-training.ihmafrica.com/request-facility")
-})
-})
+  it("Logout functionality", () => {
+    // Test logout functionality
+    facility.logout();
+    // Verify URL after logout
+    cy.url().should("equal", "https://carepro-training.ihmafrica.com/");
+  });
+
+  it("Send facility request functionality", () => {
+    // Test sending facility request
+    cy.get(facility.selectors.sendFacilityRequest).click();
+    // Verify URL after sending request
+    cy.url().should("equal", "https://carepro-training.ihmafrica.com/request-facility");
+  });
+});
