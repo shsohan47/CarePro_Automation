@@ -36,7 +36,7 @@ describe("client-search functionality", () => {
   //     cy.session('login');
   //   });
 
-  context("Group of vital validations testCase", () => {
+  context("Group of vital validation testCases", () => {
     it("go to vital functionality", () => {
       cy.visit("/client-search");
       clientServices.nrcClick();
@@ -105,7 +105,7 @@ describe("client-search functionality", () => {
       cy.get('.grid > :nth-child(5)').should("contain.text","Above normal >37°C");
 
     })
-    it.only("BP validation and Boundary Value testing",()=>
+    it("BP validation and Boundary Value testing",()=>
     {
       //visit vital with store session
       cy.visit('/vitals')
@@ -144,6 +144,30 @@ describe("client-search functionality", () => {
       cy.get('.grid > :nth-child(7)').should('contain.text','Diastolic BP>120 mmHg seek emergency care')
       cy.get(info.selectors.systolic).clear()
       cy.get(info.selectors.diastolic).clear();
+    })
+
+    it("Others field validations",()=>
+    {
+      cy.visit('/vitals')
+      cy.wait(5000)
+      clientServices.addVital();
+      //below
+      info.pulsePick("10")
+      info.RespiratoryPick('10')
+      info.oxygenPick('20');
+      cy.get('.grid > :nth-child(9)').should("contain.text",'Low Pulse rate <60 b/m')
+      cy.get('.grid > :nth-child(10)').should("contain.text",'Low Respiratory rate <12 b/m')
+      cy.get('.grid > :nth-child(11)').should("contain.text",'Below normal oxygen saturation <95%')
+      cy.get(info.selectors.pulseRate).clear()
+      cy.get(info.selectors.respiratoryRate).clear()
+      cy.get(info.selectors.oxygen).clear()
+      //normal rate
+      info.pulsePick("60")
+      info.RespiratoryPick('12')
+      info.oxygenPick('96');
+      cy.get('.grid > :nth-child(9)').should("contain.text",'Normal Pulse rate 60-100b/m')
+      cy.get('.grid > :nth-child(10)').should("contain.text",'Normal Respiratory rate 12-20b/m')
+      cy.get('.grid > :nth-child(11)').should("contain.text",'Normal oxygen saturation 95-100%')
     })
 
 
