@@ -57,7 +57,7 @@ If Cypress is not installed globally, you can install it as a dev dependency:
 
 npm install cypress --save-dev
 
-### 4. Running Tests
+## Running Tests
 To execute the test cases, you can use the following commands:
 
 Open Cypress Test Runner
@@ -73,28 +73,51 @@ The project follows the Page Object Model (POM) structure. Here's an overview of
 
 
 CarePro_Automation/
+
 ├── cypress/
+
 │   ├── fixtures/
+
 │   |--e2e
+
 |       |--auth_automation.cy.js
+
 |       |--facility_automation.cy.js
+
 |       |--vital_automation.cy.js
+
 │   ├── support/
+
 │   │   ├── commands.js
+
 │   │   ├── index.js
+
 │   │   └── page_objects/
+
 │   │       ├── loginPage.js
+
 │   │       └── ClientSearch.js
+
 │   │       ├── facilityPage.js
+
 │   │       └── PatientInfoPage.js
+
 │   ├── component/
+
 │   │   ├── clearBMI.js
+
 │   │   ├── validPatientInfo.js
+
 ├── node_modules/
+
 ├── .gitignore
+
 ├── cypress.json
+
 ├── package.json
+
 └── README.md
+
 fixtures/: Contains test data files.
 support/: Contains custom commands and the Page Object Model (POM) files.
 page_objects/: Contains page object files that define the page elements and actions.
