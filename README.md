@@ -72,7 +72,9 @@ npx cypress open || npm run cypress:open
 ## project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
+
 project-structure
+
 CarePro_Automation/
 ├── cypress/
 │   ├── fixtures/
@@ -96,6 +98,7 @@ CarePro_Automation/
 ├── cypress.json
 ├── package.json
 └── README.md
+
 fixtures/: Contains test data files.
 support/: Contains custom commands and the Page Object Model (POM) files.
 page_objects/: Contains page object files that define the page elements and actions.
