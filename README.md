@@ -30,7 +30,6 @@ This project implements a POM-based structure for better understanding and reusa
 - **Screen Video**: https://github.com/shsohan47/CarePro_Automation/assets/36979745/4d31f004-2a6a-40e5-a946-04f1275f7dc0
 
 
-
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -58,7 +57,7 @@ If Cypress is not installed globally, you can install it as a dev dependency:
 
 npm install cypress --save-dev
 
-### 4. Running Tests
+## Running Tests
 To execute the test cases, you can use the following commands:
 
 Open Cypress Test Runner
@@ -73,30 +72,50 @@ npx cypress open || npm run cypress:open
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
 
-project-structure
-
 CarePro_Automation/
+
 ├── cypress/
+
 │   ├── fixtures/
+
 │   |--e2e
+
 |       |--auth_automation.cy.js
+
 |       |--facility_automation.cy.js
+
 |       |--vital_automation.cy.js
+
 │   ├── support/
+
 │   │   ├── commands.js
+
 │   │   ├── index.js
+
 │   │   └── page_objects/
+
 │   │       ├── loginPage.js
+
 │   │       └── ClientSearch.js
+
 │   │       ├── facilityPage.js
+
 │   │       └── PatientInfoPage.js
+
 │   ├── component/
+
 │   │   ├── clearBMI.js
+
 │   │   ├── validPatientInfo.js
+
 ├── node_modules/
+
 ├── .gitignore
+
 ├── cypress.json
+
 ├── package.json
+
 └── README.md
 
 fixtures/: Contains test data files.
