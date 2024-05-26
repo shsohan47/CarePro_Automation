@@ -55,12 +55,12 @@ Using npm: npm install
 If Cypress is not installed globally, you can install it as a dev dependency:
 
 Using npm:
-
 bash
 Copy code
 npm install cypress --save-dev
-Or using yarn:
+Or using
 
+yarn:
 bash
 Copy code
 yarn add cypress --dev
@@ -71,28 +71,14 @@ Open Cypress Test Runner
 This will open the Cypress Test Runner where you can run tests interactively.
 
 Using npm:
-
 bash
 Copy code
-npm run cypress:open
-Or using yarn:
+npm run cypress:open or npx cypress open
 
+Or using yarn:
 bash
 Copy code
 yarn cypress open
-Run Tests in Headless Mode
-This will run the tests in the command line without opening the Cypress Test Runner.
-
-Using npm:
-
-bash
-Copy code
-npm run cypress:run
-Or using yarn:
-
-bash
-Copy code
-yarn cypress run
 
 project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
