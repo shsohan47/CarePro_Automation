@@ -26,6 +26,9 @@ This project implements a POM-based structure for better understanding and reusa
   - **Vitals**: Main part of automation, includes validation, boundary value testing, etc.
 - **Custom Cypress Configuration**: Modifies `cypress.config.js` to set base URL, default command timeout, and run all specs.
 - **Assertions**: Contains numerous assertions for each test case to handle every scenario and verify URL redirects correctly.
+- **Screen Shot**: ![image](https://github.com/shsohan47/CarePro_Automation/assets/36979745/286e9387-31e5-43e9-b973-0d7da86b68a5)
+- **Screen Video**: https://github.com/shsohan47/CarePro_Automation/assets/36979745/4d31f004-2a6a-40e5-a946-04f1275f7dc0
+
 
 
 ## Prerequisites
