@@ -44,6 +44,7 @@ Follow these steps to install Cypress and set up the project:
 ### 1. Clone the Repository
 
 git clone https://github.com/shsohan47/CarePro_Automation.git
+
 cd CarePro_Automation
 
 
