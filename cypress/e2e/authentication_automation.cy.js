@@ -9,7 +9,7 @@ describe("Authentication validation", () => {
     loginPage.visit();
   });
   it("should Login with valid user", () => {
-    cy.wait(5000);
+    cy.wait(2000);
     loginPage.fillUserName("tester");
     loginPage.fillPassword("tester2023!");
     loginPage.clickRememberButton();
@@ -17,11 +17,11 @@ describe("Authentication validation", () => {
     loginPage.signIn();
     cy.url().should(
       "be.equal",
-      "https://carepro-training.ihmafrica.com/select-facility"
+      "https://staging-scweb.arcapps.org/select-facility"
     );
   });
   it('"check validation", "Login with unauthenticate user" or "invalid credential"', () => {
-    cy.wait(5000);
+    cy.wait(2000);
     //validation check in empty field for username
     loginPage.fillUserName("randomUser");
     loginPage.signIn();

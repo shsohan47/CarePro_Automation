@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     
     e2e:{
-      baseUrl:"https://carepro-training.ihmafrica.com/",
+      baseUrl:"https://staging-scweb.arcapps.org",
       experimentalRunAllSpecs: true
     },
     setupNodeEvents(on, config) {
