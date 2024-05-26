@@ -30,7 +30,6 @@ This project implements a POM-based structure for better understanding and reusa
 - **Screen Video**: https://github.com/shsohan47/CarePro_Automation/assets/36979745/4d31f004-2a6a-40e5-a946-04f1275f7dc0
 
 
-
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -65,41 +64,37 @@ Open Cypress Test Runner
 This will open the Cypress Test Runner where you can run tests interactively.
 
 Using npm:
+
 npx cypress open || npm run cypress:open
 
 
 ## project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
+
 CarePro_Automation/
 ├── cypress/
 │   ├── fixtures/
-│   ├── integration/
-│   │   ├── examples/
-│   │   └── tests/
-│   │       ├── authentication.spec.js
-│   │       ├── facilities.spec.js
-│   │       └── PatientInfoPage.js
-│   │       └── vitals.spec.js
-│   ├── plugins/
+│   |--e2e
+|       |--auth_automation.cy.js
+|       |--facility_automation.cy.js
+|       |--vital_automation.cy.js
 │   ├── support/
 │   │   ├── commands.js
 │   │   ├── index.js
 │   │   └── page_objects/
 │   │       ├── loginPage.js
-│   │       └── homePage.js
+│   │       └── ClientSearch.js
 │   │       ├── facilityPage.js
 │   │       └── PatientInfoPage.js
-│   ├── components/
-│   │   ├── clearBmi.js
+│   ├── component/
+│   │   ├── clearBMI.js
 │   │   ├── validPatientInfo.js
 ├── node_modules/
 ├── .gitignore
 ├── cypress.json
 ├── package.json
 └── README.md
-
-
 fixtures/: Contains test data files.
 support/: Contains custom commands and the Page Object Model (POM) files.
 page_objects/: Contains page object files that define the page elements and actions.
