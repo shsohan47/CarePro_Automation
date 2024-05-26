@@ -41,27 +41,21 @@ Follow these steps to install Cypress and set up the project:
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/shsohan47/CarePro_Automation.git
-cd your-repo-name
+cd CarePro_Automation
 
-2. Install Dependencies
-Using npm: npm install
 
-3. Install Cypress
+### 2. Install Dependencies
+npm install
+
+
+### 3. Install Cypress
 If Cypress is not installed globally, you can install it as a dev dependency:
 
-Using npm:
 
-bash
-Copy code
 npm install cypress --save-dev
-Or using yarn:
 
-bash
-Copy code
-yarn add cypress --dev
-Running Tests
+### 4. Running Tests
 To execute the test cases, you can use the following commands:
 
 Open Cypress Test Runner
@@ -69,29 +63,10 @@ This will open the Cypress Test Runner where you can run tests interactively.
 
 Using npm:
 
-bash
-Copy code
-npm run cypress:open
-Or using yarn:
+npx cypress open || npm run cypress:open
 
-bash
-Copy code
-yarn cypress open
-Run Tests in Headless Mode
-This will run the tests in the command line without opening the Cypress Test Runner.
 
-Using npm:
-
-bash
-Copy code
-npm run cypress:run
-Or using yarn:
-
-bash
-Copy code
-yarn cypress run
-
-project-structure
+## project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
 
 ##project-structure
