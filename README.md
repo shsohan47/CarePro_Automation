@@ -65,37 +65,40 @@ Open Cypress Test Runner
 This will open the Cypress Test Runner where you can run tests interactively.
 
 Using npm:
-
 npx cypress open || npm run cypress:open
 
 
 ## project-structure
 The project follows the Page Object Model (POM) structure. Here's an overview of the directory structure:
-
-##project-structure
 CarePro_Automation/
 ├── cypress/
 │   ├── fixtures/
-│   |--e2e
-|       |--auth_automation.cy.js
-|       |--facility_automation.cy.js
-|       |--vital_automation.cy.js
+│   ├── integration/
+│   │   ├── examples/
+│   │   └── tests/
+│   │       ├── authentication.spec.js
+│   │       ├── facilities.spec.js
+│   │       └── PatientInfoPage.js
+│   │       └── vitals.spec.js
+│   ├── plugins/
 │   ├── support/
 │   │   ├── commands.js
 │   │   ├── index.js
 │   │   └── page_objects/
 │   │       ├── loginPage.js
-│   │       └── ClientSearch.js
+│   │       └── homePage.js
 │   │       ├── facilityPage.js
 │   │       └── PatientInfoPage.js
-│   ├── component/
-│   │   ├── clearBMI.js
+│   ├── components/
+│   │   ├── clearBmi.js
 │   │   ├── validPatientInfo.js
 ├── node_modules/
 ├── .gitignore
 ├── cypress.json
 ├── package.json
 └── README.md
+
+
 fixtures/: Contains test data files.
 support/: Contains custom commands and the Page Object Model (POM) files.
 page_objects/: Contains page object files that define the page elements and actions.
